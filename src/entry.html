@@ -1,6 +1,3 @@
-// Exporting ejs template as string for further compilation
-// is a hack to work around webpack's serverside bundling
-module.exports = `
 <!doctype html>
 <html>
 <head>
@@ -37,11 +34,11 @@ module.exports = `
                 <!--Banner Section Starts here-->
                 <!--bodyContainer Starts here-->
                 <section class="body_container">
-                
+
   <div id="app">
   <%- body %>
   </div>
-  
+
   </div>
             <!--Main Section Ends here-->
 
@@ -53,4 +50,3 @@ module.exports = `
 
 </body>
 </html>
-`;

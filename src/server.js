@@ -11,6 +11,7 @@ import ejs from 'ejs';
 import assets from './assets';
 import store from './app/store';
 import React from 'react';
+import fs from 'fs';
 import routes from './config/route';
 
 var ssr = require('ssr-react-router4');
@@ -42,7 +43,7 @@ server.get('*', (req, res, next) => {
     query: req.query,
     store: store,
   };
-  const template = ejs.compile(require('./view/index.ejs.js'));
+  const template = ejs.compile(fs.readFileSync(path.resolve(__dirname,'../src/entry.html')).toString());
 
     ssr(config,(err,body)=>{
       if(err) console.log(err);
